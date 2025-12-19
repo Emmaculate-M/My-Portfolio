@@ -3,379 +3,415 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Emmaculate Mwikali Mwania - Portfolio</title>
+  <title>Emmaculate Mwikali Mwania | Portfolio</title>
 
   <!-- Palette: Navy (#0A1A2F), Gold (#CBA135), White (#FFFFFF) -->
   <style>
     :root{
-      --navy: #0A1A2F;
-      --gold: #CBA135;
-      --white: #FFFFFF;
-      --muted: #F5F7FA;
-      --max-width: 1100px;
-      --header-h: 72px; /* header height */
+      --navy:#0A1A2F;
+      --gold:#CBA135;
+      --white:#FFFFFF;
+      --muted:#F5F7FA;
+      --max-width:1100px;
+      --header-h:72px;
     }
 
-    /* Reset & base */
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
-      margin:0;font-family:"Poppins",system-ui,Arial,sans-serif;
-      background:var(--muted);color:var(--navy);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+      margin:0;
+      font-family:"Poppins",system-ui,Arial,sans-serif;
+      background:var(--muted);
+      color:var(--navy);
       line-height:1.6;
-      padding-top: var(--header-h); /* prevents content behind fixed header */
+      padding-top:var(--header-h);
     }
 
     /* Header */
     header{
       position:fixed;top:0;left:0;right:0;height:var(--header-h);
-      background:var(--navy);color:var(--white);z-index:1200;
-      display:flex;align-items:center;border-bottom:3px solid rgba(203,161,53,0.06);
+      background:var(--navy);color:var(--white);
+      z-index:1200;
+      display:flex;align-items:center;
     }
     .nav-inner{
-      width:100%;max-width:var(--max-width);margin:0 auto;display:flex;
-      align-items:center;justify-content:space-between;padding:0 18px;
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:0 18px;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
-    .brand{font-weight:700;letter-spacing:0.2px}
-    .brand span{color:var(--gold);margin-left:6px;font-weight:800}
+    .logo{font-weight:800}
+    .logo span{color:var(--gold)}
 
-    /* Desktop nav */
-    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-    nav a{color:var(--white);text-decoration:none;font-weight:600;font-size:0.95rem}
+    nav ul{
+      display:flex;gap:18px;
+      list-style:none;padding:0;margin:0;
+    }
+    nav a{
+      color:var(--white);
+      text-decoration:none;
+      font-weight:600;
+      font-size:0.95rem;
+    }
     .cta{
-      background:var(--gold);color:var(--navy);padding:8px 12px;border-radius:8px;
-      font-weight:700;text-decoration:none;margin-left:8px;display:inline-block;
+      background:var(--gold);
+      color:var(--navy);
+      padding:8px 14px;
+      border-radius:8px;
+      font-weight:700;
+      text-decoration:none;
     }
 
-    /* Hamburger / Mobile */
     .hamburger{
-      display:none;flex-direction:column;gap:5px;cursor:pointer;
+      display:none;
+      flex-direction:column;
+      gap:5px;
+      cursor:pointer;
     }
-    .hamburger div{width:26px;height:3px;background:var(--white);border-radius:3px}
+    .hamburger div{
+      width:26px;height:3px;
+      background:var(--white);
+      border-radius:3px;
+    }
 
-    /* Mobile full-screen overlay nav */
     .mobile-nav{
-      display:none;position:fixed;inset:0;background:rgba(10,26,47,0.96);z-index:1400;
-      padding-top:60px;padding-left:20px;
+      display:none;
+      position:fixed;inset:0;
+      background:rgba(10,26,47,0.97);
+      padding:80px 20px;
+      z-index:1400;
     }
-    .mobile-nav a{display:block;color:var(--white);font-size:1.15rem;margin:14px 0;text-decoration:none}
+    .mobile-nav a{
+      display:block;
+      color:var(--white);
+      font-size:1.2rem;
+      margin:16px 0;
+      text-decoration:none;
+    }
+    .mobile-nav.show{display:block}
+
+    /* Sections */
+    section{
+      max-width:var(--max-width);
+      margin:24px auto;
+      padding:28px;
+      background:var(--white);
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(8,16,28,0.06);
+    }
+    h2{text-align:center;margin-top:0}
 
     /* Hero */
     #hero{
-      max-width:var(--max-width);margin:18px auto 8px;padding:36px;border-radius:12px;
-      background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.98));
-      display:flex;gap:28px;align-items:center;
+      display:flex;
+      gap:28px;
+      align-items:center;
     }
-    .hero-left{flex:0 0 160px;display:flex;justify-content:center}
     .avatar{
-      width:150px;height:150px;border-radius:50%;overflow:hidden;border:6px solid var(--white);
-      box-shadow:0 6px 18px rgba(2,8,23,0.2);
+      width:150px;height:150px;
+      border-radius:50%;
+      overflow:hidden;
+      border:5px solid var(--white);
+      box-shadow:0 6px 18px rgba(0,0,0,0.2);
     }
-    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    .hero-right h1{margin:0}
+    .tag{color:var(--gold);font-weight:700;margin:6px 0 12px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .btn-primary{
+      background:var(--navy);
+      color:var(--white);
+      padding:10px 14px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:700;
+    }
+    .btn-outline{
+      border:2px solid var(--gold);
+      padding:8px 12px;
+      border-radius:8px;
+      font-weight:700;
+      text-decoration:none;
+      color:var(--navy);
+    }
 
-    .hero-right{flex:1;min-width:0}
-    .hero-right h1{margin:0;font-size:1.45rem;color:var(--navy)}
-    .hero-right p.tag{margin:6px 0 12px;color:var(--gold);font-weight:700}
-    .hero-right p.pitch{margin:0;color:#213142;opacity:0.95}
-
-    .hero-actions{margin-top:14px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn-primary{background:var(--navy);color:var(--white);padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}
-    .btn-outline{background:transparent;border:2px solid var(--gold);color:var(--navy);padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700}
-
-    /* Sections */
-    section{max-width:var(--max-width);margin:22px auto;padding:28px;background:var(--white);border-radius:12px;box-shadow:0 6px 20px rgba(8,16,28,0.06)}
-    section h2{text-align:center;margin-top:0;color:var(--navy)}
-
-    /* About layout */
-    #about .about-grid{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+    /* About */
+    .about-grid{
+      display:flex;
+      gap:22px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
     .about-copy{flex:1;min-width:260px}
-    .about-stats{flex:0 0 220px;text-align:center}
-    .about-stats p{margin:6px 0;font-weight:700;color:var(--gold)}
+    .about-stats{
+      flex:0 0 220px;
+      text-align:center;
+      color:var(--gold);
+      font-weight:700;
+    }
 
     /* Skills */
-    .skills-grid{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
-    .skill-card{flex:0 0 260px;background:linear-gradient(180deg,#FBFBFB,#fff);padding:16px;border-radius:10px;border:1px solid rgba(10,26,47,0.04)}
-    .skill-card h4{margin:0 0 8px;color:var(--navy)}
-    .skill-card ul{margin:0;padding-left:18px}
+    .skills-grid{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .skill-card{
+      flex:0 0 260px;
+      border:1px solid rgba(10,26,47,0.05);
+      border-radius:10px;
+      padding:16px;
+    }
 
-    /* Projects simple */
-    .projects-grid{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
-    .project-card{flex:0 0 300px;padding:14px;border-radius:10px;background:#fff;border:1px solid rgba(10,26,47,0.04)}
-    .project-card .btn{margin-top:10px;display:inline-block}
+    /* Projects */
+    .projects-grid{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .project-card{
+      flex:0 0 300px;
+      border:1px solid rgba(10,26,47,0.05);
+      border-radius:10px;
+      padding:16px;
+    }
+
+    /* Elevator Pitch */
+    .video-container{
+      position:relative;
+      width:100%;
+      max-width:800px;
+      margin:0 auto;
+      padding-bottom:56.25%;
+      height:0;
+    }
+    .video-container iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border-radius:12px;
+    }
 
     /* Contact */
-    #contact .contact-grid{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start}
-    .contact-left{flex:1;min-width:260px}
-    .contact-right{flex:0 0 320px}
-    .contact-links a{display:inline-block;margin-right:12px;color:var(--navy);text-decoration:none;font-weight:700}
-    .contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #dbe6ef;margin-bottom:10px}
-    .contact-form button{background:var(--gold);border:none;padding:10px 12px;border-radius:8px;font-weight:700;color:var(--navy);cursor:pointer}
-
-    /* Footer */
-    footer{padding:16px;text-align:center;color:#fff;background:linear-gradient(90deg,var(--navy),#072233);margin-top:10px;border-top:4px solid rgba(203,161,53,0.08)}
-
-    /* Utilities */
-    .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-    .muted{color:#475a6b;font-size:0.95rem}
-    a{color:inherit}
-
-    /* Responsive tweaks */
-    @media(max-width:920px){
-      .hero-left{flex-basis:120px}
-      .avatar{width:120px;height:120px}
-      .hero-right h1{font-size:1.25rem}
-      .skill-card{flex-basis:46%}
+    .contact-grid{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
     }
-    @media(max-width:640px){
-      :root{--header-h:64px}
-      .nav-inner{padding:0 12px}
+    .contact-form input,
+    .contact-form textarea{
+      width:100%;
+      padding:10px;
+      margin-bottom:10px;
+      border-radius:8px;
+      border:1px solid #dbe6ef;
+    }
+    .contact-form button{
+      background:var(--gold);
+      border:none;
+      padding:10px 14px;
+      border-radius:8px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    footer{
+      background:var(--navy);
+      color:white;
+      text-align:center;
+      padding:16px;
+      margin-top:20px;
+    }
+
+    @media(max-width:720px){
       nav ul{display:none}
       .hamburger{display:flex}
-      .mobile-nav{display:none}
-      .hero-right p.pitch{font-size:0.94rem}
-      .about-stats{order:2;flex-basis:100%;text-align:left}
-      #hero{padding:22px}
-      section{margin:12px 12px;padding:18px}
+      #hero{flex-direction:column;text-align:center}
+      .about-stats{text-align:left}
+      section{margin:12px}
     }
-
-    /* Mobile overlay shown:helper class */
-    .mobile-nav.show{display:block}
-
-    /* Accessibility + focus */
-    a:focus{outline:3px solid rgba(203,161,53,0.25);outline-offset:2px}
   </style>
 </head>
 
 <body>
-  <!-- Header -->
-  <header role="banner" aria-label="Top Navigation">
-    <div class="nav-inner">
-      <div class="brand">Emmaculate <span>Mwania</span></div>
 
-      <!-- Desktop nav -->
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a class="cta" href="#contact">Hire Me</a></li>
-        </ul>
-      </nav>
+<header>
+  <div class="nav-inner">
+    <div class="logo">Emmaculate <span>Mwania</span></div>
 
-      <!-- Mobile hamburger -->
-      <div class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" role="button" tabindex="0">
-        <div></div><div></div><div></div>
-      </div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#design">Design</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="cta" href="#contact">Hire Me</a></li>
+      </ul>
+    </nav>
+
+    <div class="hamburger" id="hamburger">
+      <div></div><div></div><div></div>
     </div>
+  </div>
 
-    <!-- Mobile overlay nav -->
-    <div id="mobileNav" class="mobile-nav" aria-hidden="true">
-      <a href="#about" class="mobile-link">About</a>
-      <a href="#skills" class="mobile-link">Skills</a>
-      <a href="#projects" class="mobile-link">Projects</a>
-      <a href="#contact" class="mobile-link">Contact</a>
-      <a class="cta" href="#contact" style="margin-top:18px;display:inline-block;background:var(--gold);color:var(--navy);">Hire Me</a>
+  <div id="mobileNav" class="mobile-nav">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#design">Design</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="avatar">
+    <img src="Emmaculate.jpg" alt="Emmaculate Mwikali Mwania">
+  </div>
+  <div class="hero-right">
+    <h1>Emmaculate Mwikali Mwania</h1>
+    <p class="tag">Banking Professional | Creative Tech Learner | Digital Explorer</p>
+    <p>
+      I am a banking and finance professional transitioning into creative technology, driven by curiosity,
+      purpose, and a desire to build practical, people-centered digital solutions.
+    </p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#contact">Contact</a>
+      <a class="btn-outline" href="Emmaculate_Mwania.pdf" target="_blank">Download CV</a>
     </div>
-  </header>
-
-  <!-- HERO -->
-  <section id="hero" role="region" aria-labelledby="hero-heading">
-    <div class="hero-left">
-      <div class="avatar" aria-hidden="true">
-        <!-- relative path; place Emmaculate.png in same folder -->
-        <img src="Emmaculate.png" alt="Emmaculate Mwikali Mwania portrait" />
-      </div>
-    </div>
-
-    <div class="hero-right">
-      <h1 id="hero-heading">Emmaculate Mwikali Mwania</h1>
-      <p class="tag">Banking Professional | Digital Creative | Aspiring Software Engineer</p>
-
-      <!-- Elevator pitch placeholder -->
-      <p id="pitch-placeholder" class="pitch muted"><em>[Elevator pitch]</em></p>
-
-      <div class="hero-actions">
-        <a class="btn-primary" href="#contact">Contact</a>
-        <!-- Download CV - ensure Emmaculate_Mwania.pdf is in same folder -->
-        <a class="btn-outline" href="Emmaculate_Mwania.pdf" target="_blank" rel="noopener">Download CV</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" aria-labelledby="about-heading">
-    <h2 id="about-heading">About</h2>
-    <div class="about-grid">
-      <div class="about-copy">
-        <p>
-          Emmaculate Mwania is a detail-oriented banking and finance professional currently serving as a Direct Sales Representative at KCB Bank. With a strong background in client engagement, product sales and service excellence-combined with growing expertise in web development and digital tools-she blends finance, technology and creativity in her work. Emmaculate holds a Bachelor of Commerce (Accounting) from JKUAT and is continuously expanding her technical skillset; in the recent past through the Power Learn Project and currently through ALX Professional Foundations.
-        </p>
-        <p class="muted" style="margin-top:10px">
-          Outside work she enjoys knitting and crocheting, swimming, and exploring creative digital tools.
-        </p>
-      </div>
-
-      <div class="about-stats" aria-hidden="true">
-        <p>Experience: <strong>7+ years</strong></p>
-        <p>Fields: <strong>Banking | Transcription | Digital Services</strong></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" aria-labelledby="skills-heading">
-    <h2 id="skills-heading">Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h4>Professional</h4>
-        <ul>
-          <li>Banking & Client Relations</li>
-          <li>Cash Handling & Reconciliation</li>
-          <li>Direct Sales & Onboarding</li>
-          <li>KYC & AML Compliance</li>
-          <li>Customer Support</li>
-        </ul>
-      </div>
-
-      <div class="skill-card">
-        <h4>Technical</h4>
-        <ul>
-          <li>HTML | CSS | JavaScript</li>
-          <li>Python (Foundations)</li>
-          <li>Database Basics</li>
-          <li>AI-aided Graphic Design</li>
-          <li>Virtual Assistance Tools</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" aria-labelledby="projects-heading">
-    <h2 id="projects-heading">Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-      <h3>Seizure Safe - Frontend</h3>
-      <p>A web interface designed with accessibility and safety in mind. Built during PLP training.</p>
-      <a class="btn-primary" href="https://seizuresafe00frontend.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
-      </div>
-
-      <div class="project-card">
-      <h3>Chat App - Frontend</h3>
-      <p>A responsive chat interface. Created as part of PLP coursework challenges.</p>
-      <a class="btn-primary" href="https://my-chatapp01-frontend.vercel.app/" target="_blank" rel="noopener">Live Demo</a>
-      </div>
-
-      <div class="project-card">
-        <h3>HTML Intro</h3>
-        <p>Introductory page built during PLP coursework.</p>
-        <a class="btn-primary" href="https://github.com/PLP-WebTechnologies/feb-2025-introduction-to-html-5-Emmaculate-M.git" target="_blank" rel="noopener">View on GitHub</a>
-      </div>
-
-      <div class="project-card">
-        <h3>Python Calculator</h3>
-        <p>Basic calculator program built to practice Python fundamentals.</p>
-        <a class="btn-primary" href="https://github.com/Emmaculate-M/Python-Assignment" target="_blank" rel="noopener">View on GitHub</a>
-      </div>
-    </div>
-  </section>
-  <section id="design" aria-labelledby="design-heading">
-  <h2 id="design-heading">Graphic Design Portfolio</h2>
-
-  <p class="muted" style="text-align:center; max-width:700px; margin:0 auto 20px;">
-    A curated selection of graphics, posters, branded content, and AI-assisted visuals that showcase my creativity and design versatility.
-  </p>
-
-  <div class="projects-grid">
-
-    <div class="project-card">
-      <h3>Graphic Design Collection</h3>
-      <p>A set of creative visuals including posters, branding concepts, and marketing designs.</p>
-      <a class="btn-primary" href="https://drive.google.com/drive/folders/1IA_fWhAfMac9ah9NBF8bGn_sKazTlkhx?usp=drive_link" 
-         target="_blank" rel="noopener">
-         View Designs
-      </a>
-    </div>
-
   </div>
 </section>
 
-
-  <!-- CONTACT -->
-  <section id="contact" aria-labelledby="contact-heading">
-    <h2 id="contact-heading">Contact</h2>
-    <div class="contact-grid">
-      <div class="contact-left">
-        <p class="muted">Let's work together - I respond quickly and enjoy solving practical problems that blend finance and technology.</p>
-        <div style="margin-top:12px">
-          <a class="contact-links" href="mailto:Emmaculatemwania516@outlook.com">Email</a> |
-          <a class="contact-links" href="https://www.linkedin.com/in/emmaculate-mwania-418850120/" target="_blank">LinkedIn</a> |
-          <a class="contact-links" href="https://wa.me/254716916026" target="_blank">WhatsApp</a>
-        </div>
-
-        <div style="margin-top:18px">
-          <form class="contact-form" method="POST" action="https://formspree.io/f/yourFormID">
-            <input name="name" type="text" placeholder="Your name" required />
-            <input name="email" type="email" placeholder="Your email" required />
-            <textarea name="message" rows="5" placeholder="Your message" required></textarea>
-            <button type="submit">Send Message</button>
-          </form>
-        </div>
-      </div>
-
-      <div class="contact-right">
-        <p><strong>Quick details</strong></p>
-        <p class="muted">Nairobi, Kenya</p>
-        <p class="muted">+254 716 916 026</p>
-        <p style="margin-top:8px"><a class="cta" href="Emmaculate_Mwania.pdf" download>Download CV</a></p>
-      </div>
+<section id="about">
+  <h2>About Me</h2>
+  <div class="about-grid">
+    <div class="about-copy">
+      <p>
+        Emmaculate is a Nairobi-based banking professional with over seven years of experience in
+        customer engagement, financial services, and relationship management. She currently works
+        as a Direct Sales Representative at KCB Bank.
+      </p>
+      <p>
+        Alongside her banking career, she is actively building foundational skills in web
+        development, digital tools, and creative technology through ALX and Power Learn Project.
+        She is particularly interested in how technology can amplify storytelling, sustainability,
+        and community impact.
+      </p>
+      <p class="muted">
+        Outside work, she enjoys knitting and crocheting, swimming, and experimenting with digital
+        design tools.
+      </p>
     </div>
-  </section>
+    <div class="about-stats">
+      <p>7+ Years Experience</p>
+      <p>Banking & Client Services</p>
+      <p>Creative Tech Learner</p>
+    </div>
+  </div>
+</section>
 
-  <footer role="contentinfo">
-    <p>&copy; 2025 Emmaculate Mwikali Mwania - All rights reserved</p>
-  </footer>
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h4>Professional</h4>
+      <ul>
+        <li>Banking Operations</li>
+        <li>Client Relationship Management</li>
+        <li>Direct Sales & Onboarding</li>
+        <li>KYC & Compliance</li>
+      </ul>
+    </div>
+    <div class="skill-card">
+      <h4>Technical (Learning & Foundations)</h4>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Python Fundamentals</li>
+        <li>AI-assisted Graphic Design</li>
+        <li>Digital Collaboration Tools</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-  <script>
-    // Mobile nav toggle
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>Seizure Safe (Frontend)</h3>
+      <p>Accessibility-focused interface built during PLP training.</p>
+      <a class="btn-primary" href="https://seizuresafe00frontend.vercel.app/" target="_blank">Live Demo</a>
+    </div>
+    <div class="project-card">
+      <h3>Chat App (Frontend)</h3>
+      <p>Responsive chat interface built as a learning project.</p>
+      <a class="btn-primary" href="https://my-chatapp01-frontend.vercel.app/" target="_blank">Live Demo</a>
+    </div>
+  </div>
+</section>
 
-    function toggleMobileNav() {
-      const open = mobileNav.classList.toggle('show');
-      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      mobileNav.setAttribute('aria-hidden', open ? 'false' : 'true');
-    }
-    hamburger.addEventListener('click', toggleMobileNav);
-    hamburger.addEventListener('keydown', function(e){ if(e.key==='Enter' || e.key===' ') toggleMobileNav(); });
+<section id="design">
+  <h2>Graphic Design Portfolio</h2>
+  <p style="text-align:center">
+    A small collection of experimental and AI-assisted design projects.
+  </p>
+  <div class="projects-grid">
+    <div class="project-card">
+      <a class="btn-primary" href="https://drive.google.com/drive/folders/1IA_fWhAfMac9ah9NBF8bGn_sKazTlkhx?usp=drive_link" target="_blank">
+        View Designs
+      </a>
+    </div>
+  </div>
+</section>
 
-    // Close mobile nav on link click (smooth UX)
-    document.querySelectorAll('.mobile-link').forEach(a=>{
-      a.addEventListener('click', ()=>{
-        mobileNav.classList.remove('show');
-        hamburger.setAttribute('aria-expanded','false');
-        mobileNav.setAttribute('aria-hidden','true');
-      });
-    });
+<section id="elevator">
+  <h2>Elevator Pitch</h2>
+  <p style="text-align:center">
+    A short introduction to who I am, what I'm learning, and the value I bring.
+  </p>
+  <div class="video-container">
+    <!-- Replace VIDEO_ID -->
+    <iframe src="https://drive.google.com/file/d/1-mDJTwZM4Wi7t9B1dyOy3bW0Vo4QPsxR/view?usp=drive_link" allowfullscreen></iframe>
+  </div>
+</section>
 
-    // Simple form submit validation fallback
-    document.querySelectorAll('.contact-form').forEach(form=>{
-      form.addEventListener('submit', function(e){
-        const name = form.querySelector('input[name="name"]').value.trim();
-        const email = form.querySelector('input[name="email"]').value.trim();
-        const msg = form.querySelector('textarea[name="message"]').value.trim();
-        if(!name || !email || !msg){
-          e.preventDefault(); alert('Please complete all fields before sending.');
-        } else {
-          // let Formspree handle the network; optionally show a 'sending' state
-        }
-      });
-    });
+<section id="contact">
+  <h2>Contact</h2>
 
-    // Ensure focus trap not needed for this simple mobile nav
-  </script>
+  <div class="contact-grid centered">
+    <div class="contact-info">
+      <p>Let’s connect and explore opportunities to grow and build together.</p>
+
+      <p class="contact-links">
+        <a href="mailto:Emmaculatemwania516@outlook.com">Email</a> ·
+        <a href="https://www.linkedin.com/in/emmaculate-mwania-418850120/" target="_blank">LinkedIn</a> ·
+        <a href="https://wa.me/254716916026" target="_blank">WhatsApp</a>
+      </p>
+    </div>
+
+    <form class="contact-form" action="https://formspree.io/f/yourFormID" method="POST">
+      <input name="name" placeholder="Your name" required>
+      <input name="email" type="email" placeholder="Your email" required>
+      <textarea name="message" rows="4" placeholder="Your message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Emmaculate Mwikali Mwania. All rights reserved.</p>
+</footer>
+
+<script>
+  const hamburger=document.getElementById('hamburger');
+  const mobileNav=document.getElementById('mobileNav');
+  hamburger.onclick=()=>mobileNav.classList.toggle('show');
+</script>
+
 </body>
 </html>

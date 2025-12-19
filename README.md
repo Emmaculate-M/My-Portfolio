@@ -1,12 +1,12 @@
-Emmaculate Mwikali Mwania — Portfolio Website
+# Emmaculate Mwikali Mwania — Portfolio Website
 
 This is my personal portfolio website showcasing my professional background, skills, projects, and creative work. The website includes my finance and banking experience, digital skills, software engineering journey, and samples of my graphic design projects.
 
- Live Website
+ ### Live Website
 
 👉 Add your hosted link here once deployed (Vercel, Netlify, or GitHub Pages).
 
- About the Website
+###  About the Website
 
 This portfolio highlights:
 
@@ -24,7 +24,7 @@ Contact information & social links
 
 It is fully responsive, cleanly structured, and styled with a modern Navy Blue + Gold + White theme for a professional look.
 
- Features
+###  Features
 
 ✔ Fully mobile-responsive layout
 ✔ Smooth navigation with hamburger menu
@@ -35,7 +35,7 @@ It is fully responsive, cleanly structured, and styled with a modern Navy Blue +
 ✔ Circular framed profile photo
 ✔ Scroll-to-top button & smooth fade-in animations
 
- Tech Stack
+###  Tech Stack
 
 HTML5
 
@@ -49,7 +49,7 @@ Formspree for contact form submission
 
 Deployment: GitHub Pages
 
-📁 Project Structure
+ ### Project Structure
 portfolio/
 │
 ├── index.html              # Main HTML file
@@ -57,7 +57,7 @@ portfolio/
 ├── Emmaculate_Mwania.pdf   # Downloadable CV
 └── README.md               # A README file of the portfolio.
 
- Sections Included
+###  Sections Included
 
 Hero Section — Intro + tagline
 
@@ -77,7 +77,7 @@ Languages
 
 Contact Section
 
- Installation & Setup
+ ### Installation & Setup
 
 To run locally:
 
@@ -85,39 +85,36 @@ Clone the repository
 
 git clone https://github.com/Emmaculate-M/My-Portfolio.git
 
-
 Open the folder
 
 Open index.html in your browser
 
 No additional setup required
 
- Deploying
+ ### Deploying
 
-You can deploy the website easily using:
+I deployed the website using GitHub Pages.
 
-GitHub Pages
+Pushed the repo to GitHub
 
-Push repo to GitHub
+Went to Settings → Pages
 
-Go to Settings → Pages
-
-Select branch: master
+Selected branch: master
 
 Root folder: /
 
-Save → Your site goes live in seconds
+Saved → my site went live.
 
- Author
+ ### Author
 
 Emmaculate Mwikali Mwania
 
 Portfolio Website
 
-LinkedIn: add link
+LinkedIn: (https://www.linkedin.com/in/emmaculate-mwania-418850120/)
 
-Email: add email
+Email: kamauemmaculate0@gmail.com
 
- License
+###  License
 
 This project is open-source and available under the MIT License.
